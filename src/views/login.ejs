@@ -1,0 +1,64 @@
+<%- include('includes/head')%>
+<%- include('includes/nav')%>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-2"></div>
+
+        <div class="col-lg-8 my-3">
+            <h1 class="text-center"> Criar conta ou Entrar</h1>
+            <p class="text-center lead">Faça seu login ou crie conta abaixo</p>
+
+            <%- include('includes/messages.ejs')%>
+
+            <div class="row">
+
+                <div class="col-lg my-3">
+                    <h4>Faça o seu cadastro</h4>
+                    <p>Se ainda não tens uma conta, preencha o fomulário abaixo</p>
+                    <form class="form-cadastro" action="/login/register" method="POST" >
+                        <input type="hidden" name="_csrf" value=<%= csrfToken %>>
+                        
+                        <div class="mb-3">
+                          <label>Endereço email</label>
+                          <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Introduza o seu email aqui">
+                          
+                        </div>
+                        <div class="mb-3">
+                          <label>Palavra-passe</label>
+                          <input name="password" type="password" class="form-control" id="exampleInputPassword1">
+                        </div>
+                    
+                        <button type="submit" class="btn btn-primary">Criar minha conta</button>
+                    </form>
+                </div>
+
+                <div class="col-lg my-3">
+                    <h4>Faça o seu login</h4>
+                    <p>Se já tens uma conta, preencha o fomulário abaixo</p>
+                    <form class="form-cadastro" action="/login/login" method="POST">
+                      <input type="hidden" name="_csrf" value=<%= csrfToken %>>
+                        
+                        <div class="mb-3">
+                          <label>Endereço email</label>
+                          <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Introduza o seu email aqui">
+                          
+                        </div>
+                        <div class="mb-3">
+                          <label>Palavra-passe</label>
+                          <input name="password" type="password" class="form-control" id="exampleInputPassword1">
+                        </div>
+                    
+                        <button type="submit" class="btn btn-primary">Entrar</button>
+                      </form>
+                </div>
+                
+            </div>
+
+        </div>
+
+          
+    </div>
+</div>
+
+<%- include('includes/footer')%>
