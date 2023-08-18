@@ -54,6 +54,6 @@ app.use(routes)
 
 app.on("pronto", () => {
     app.listen(3000, () => {
-        console.log('Servidor rodando')
+        console.log('Servidor rodando na localhost:3000')
     })
 })
